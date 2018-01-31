@@ -1,10 +1,10 @@
 ﻿using Microsoft.OData.Edm;
-using Part08.Models;
+using Part09.Models;
 using System.Web.Http;
 using System.Web.OData.Builder;
 using System.Web.OData.Extensions;
 
-namespace Part08
+namespace Part09
 {
 	public static class WebApiConfig
 	{
@@ -18,7 +18,7 @@ namespace Part08
 		{
 			ODataConventionModelBuilder _builder = new ODataConventionModelBuilder();
 
-			_builder.EntitySet<Customer>("Customers");
+			_builder.EntitySet<Car>("Cars");
 
 			return _builder.GetEdmModel();
 		}

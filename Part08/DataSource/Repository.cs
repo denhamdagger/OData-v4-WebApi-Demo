@@ -6,25 +6,25 @@ namespace Part08.DataSource
 {
 	public class Repository
 	{
-		private List<Car> _cars;
+		private List<Customer> _customers;
 
 		public Repository()
 		{
-			_cars = new List<Car> {
-				new Car {Make = "Vauxhall", Model = "Zafira", Colour = "Blue", Price = 20000.00},
-				new Car {Make = "Vauxhall", Model = "Mokka", Colour = "Silver", Price = 18500.00},
-				new Car {Make = "Ford", Model = "Focus", Colour = "Black", Price = 22000.00}
+			_customers = new List<Customer> {
+				new Customer { Id = 1, FirstName = "Katie", LastName = "Smith", Age = 15 },
+				new Customer { Id = 2, FirstName = "Luke", LastName = "Jones", Age = 26 },
+				new Customer { Id = 3, FirstName = "Carl", LastName = "Lewis", Age = 47 }
 			};
 		}
 
-		public IQueryable<Car> GetCars()
+		public IQueryable<Customer> GetCustomers()
 		{
-			return _cars.AsQueryable();
+			return _customers.AsQueryable();
 		}
 
-		public Car GetCar(string make, string model)
+		public Customer GetCustomer(int id)
 		{
-			return _cars.Where(p => p.Make == make && p.Model == model).FirstOrDefault();
+			return _customers.Where(p => p.Id == id).FirstOrDefault();
 		}
 	}
 }
