@@ -1,14 +1,14 @@
 ﻿using Microsoft.OData;
 using Microsoft.OData.Edm;
 using Microsoft.OData.UriParser;
-using Part10.Models;
+using Part11.Models;
 using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.OData.Builder;
 using System.Web.OData.Extensions;
 using System.Web.OData.Routing.Conventions;
 
-namespace Part10
+namespace Part11
 {
 	public static class WebApiConfig
 	{
@@ -30,7 +30,7 @@ namespace Part10
 			EdmModel _builder = new EdmModel();
 
 			// Create Car Entity
-			EdmEntityType car = new EdmEntityType("Part10.Models", "Car");
+			EdmEntityType car = new EdmEntityType("Part11.Models", "Car");
 			car.AddKeys(car.AddStructuralProperty("Make", EdmPrimitiveTypeKind.String), car.AddStructuralProperty("Model", EdmPrimitiveTypeKind.String));
 			car.AddStructuralProperty("Colour", EdmPrimitiveTypeKind.String);
 			car.AddStructuralProperty("Price", EdmPrimitiveTypeKind.Double);
