@@ -19,14 +19,12 @@ namespace Part08.Controllers
 		}
 
 		// OData\Customers
-		[EnableQuery]
 		public IQueryable<Customer> Get()
 		{
 			return _repo.GetCustomers();
 		}
 
 		// OData\Customers(1)
-		[EnableQuery]
 		public Customer Get([FromODataUri] int Key)
 		{
 			return _repo.GetCustomer(Key);

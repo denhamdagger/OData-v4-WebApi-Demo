@@ -19,7 +19,6 @@ namespace Part12.Controllers
 		}
 
 		// OData/Cars
-		[EnableQuery]
 		[ODataRoute("")]
 		public IQueryable<Car> GetAllCars()
 		{
@@ -27,7 +26,6 @@ namespace Part12.Controllers
 		}
 
 		// OData/Cars(Make='Vauxhall', Model='Zafira')
-		[EnableQuery]
 		[ODataRoute("(Make={KeyMake}, Model={KeyModel})")]
 		public Car Get([FromODataUri] string KeyMake, [FromODataUri] string KeyModel)
 		{
@@ -35,7 +33,6 @@ namespace Part12.Controllers
 		}
 
 		// OData/Cars(Category='4x4')
-		[EnableQuery]
 		[ODataRoute("(Category={Category})")]
 		public IQueryable<Car> GetCarByCategory([FromODataUri]string Category)
 		{

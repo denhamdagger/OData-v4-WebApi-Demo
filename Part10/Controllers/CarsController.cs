@@ -17,21 +17,18 @@ namespace Part10.Controllers
 		}
 
 		// OData/Cars
-		[EnableQuery]
 		public IQueryable<Car> Get()
 		{
 			return _repo.GetCars();
 		}
 
 		// OData/Cars(Make='Vauxhall', Model='Zafira')
-		[EnableQuery]
 		public Car Get([FromODataUri] string KeyMake, [FromODataUri] string KeyModel)
 		{
 			return _repo.GetCar(KeyMake, KeyModel);
 		}
 
 		// OData/Cars(Category='4x4')
-		[EnableQuery]
 		[ODataRoute("Cars(Category={Category})")]
 		public IQueryable<Car> GetCarByCategory([FromODataUri]string Category)
 		{

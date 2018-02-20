@@ -15,14 +15,12 @@ namespace Part09.Controllers
 		}
 
 		// OData/Cars
-		[EnableQuery]
 		public IQueryable<Car> Get()
 		{
 			return _repo.GetCars();
 		}
 
 		// OData/Cars(Make='Vauxhall', Model='Zafira')
-		[EnableQuery]
 		public Car Get([FromODataUri] string KeyMake, [FromODataUri] string KeyModel)
 		{
 			return _repo.GetCar(KeyMake, KeyModel);
