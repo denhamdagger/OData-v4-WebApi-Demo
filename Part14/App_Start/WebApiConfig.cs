@@ -31,6 +31,8 @@ namespace Part14
 			builder.EntitySet<Employee>("Employees")
 				.EntityType
 				.Select()
+				.Filter()
+				.Filter(QueryOptionSetting.Disabled, "City")
 				//.Select(SelectExpandType.Automatic, "TitleOfCourtesy", "EmployeeID", "FirstName", "LastName", "Title", "Notes")
 				.Select(SelectExpandType.Disabled, "Notes");
 
