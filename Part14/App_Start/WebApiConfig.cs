@@ -31,13 +31,18 @@ namespace Part14
 			builder.EntitySet<Employee>("Employees")
 				.EntityType
 				.Select()
+				.Count()
 				.Filter()
 				.Filter(QueryOptionSetting.Disabled, "City")
-				//.Select(SelectExpandType.Automatic, "TitleOfCourtesy", "EmployeeID", "FirstName", "LastName", "Title", "Notes")
+				.Expand()
 				.Select(SelectExpandType.Disabled, "Notes");
 
 			builder.EntityType<Employee>().Ignore(p => p.Photo);
 			builder.EntityType<Employee>().Ignore(p => p.PhotoPath);
+
+			builder.EntitySet<Order>("Orders")
+				.EntityType
+				.Select();
 
 			return builder.GetEdmModel();
 		}
